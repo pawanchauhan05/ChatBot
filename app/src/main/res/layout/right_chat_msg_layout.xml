@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingTop="10dp"
+    android:paddingLeft="16dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:textColor="@color/color_000000"
+        android:gravity="right"
+        android:layout_toLeftOf="@+id/imageViewRightArrow"
+        android:background="@drawable/rounded_corner_right"
+        android:id="@+id/textViewMsg"
+        android:padding="10dp"
+        android:textSize="16dp"
+        android:text="Android charting application xml ui design. Android charting application xml ui design tutorial with example. Android charting application xml ui design. Android charting application xml ui design."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:tint="@color/color_DFFECD"
+        android:layout_marginLeft="-1dp"
+        android:rotation="270"
+        android:id="@+id/imageViewRightArrow"
+        android:layout_alignParentRight="true"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:src="@drawable/left_arrow" />
+
+</RelativeLayout>

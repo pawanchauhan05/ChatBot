@@ -6,6 +6,7 @@
  - Gson for json parsing
  - Sugar Orm for local DB
  - Material design for UI
+ - Offline message Sync
 
 ![Snapshot 1](https://github.com/pawanchauhan05/Chatbot/blob/master/snapshot/Image%202018-05-20%20at%202.53.09%20PM.jpeg?raw=true)
 

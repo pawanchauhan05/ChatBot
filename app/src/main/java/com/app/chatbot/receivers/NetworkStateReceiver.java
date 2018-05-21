@@ -52,11 +52,8 @@ public class NetworkStateReceiver extends BroadcastReceiver {
 
         if (connected == true) {
             listener.networkAvailable();
-            //setNetworkTripInGeofenceData(true);
-
         } else {
             listener.networkUnavailable();
-            //setNetworkTripInGeofenceData(false);
         }
     }
 

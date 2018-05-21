@@ -85,43 +85,6 @@ public class Utility {
         }
     }
 
-    private class AsyncTaskRunner extends AsyncTask<String, String, String> {
-
-        private Message message;
-
-        public Message getMessage() {
-            return message;
-        }
-
-        public void setMessage(Message message) {
-            this.message = message;
-        }
-
-        @Override
-        protected String doInBackground(String... params) {
-            sendToServer(message);
-            return "";
-        }
-
-
-        @Override
-        protected void onPostExecute(String result) {
-            // execution of result of Long time consuming operation
-        }
-
-
-        @Override
-        protected void onPreExecute() {
-
-        }
-
-
-        @Override
-        protected void onProgressUpdate(String... text) {
-
-        }
-    }
-
 
     public void syncMessage() {
         List<Message> messageList = Select.from(Message.class).where(Condition.prop("sent").eq("0")).list();

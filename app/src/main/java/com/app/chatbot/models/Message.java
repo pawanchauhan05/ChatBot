@@ -12,6 +12,8 @@ public class Message extends SugarRecord<Message> {
     private String message;
     private String emotion;
     private String type;
+    private boolean sent;
+    private String storeTime;
 
     public Message() {
     }
@@ -56,6 +58,22 @@ public class Message extends SugarRecord<Message> {
         this.type = type;
     }
 
+    public boolean isSent() {
+        return sent;
+    }
+
+    public void setSent(boolean sent) {
+        this.sent = sent;
+    }
+
+    public String getStoreTime() {
+        return storeTime;
+    }
+
+    public void setStoreTime(String storeTime) {
+        this.storeTime = storeTime;
+    }
+
     @Override
     public String toString() {
         return "Message{" +
@@ -63,6 +81,8 @@ public class Message extends SugarRecord<Message> {
                 ", chatBotID=" + chatBotID +
                 ", message='" + message + '\'' +
                 ", emotion='" + emotion + '\'' +
+                ", type='" + type + '\'' +
+                ", sent=" + sent +
                 '}';
     }
 }

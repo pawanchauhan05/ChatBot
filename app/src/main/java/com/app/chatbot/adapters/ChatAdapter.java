@@ -2,6 +2,7 @@ package com.app.chatbot.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 
 import com.app.chatbot.R;
 import com.app.chatbot.models.Message;
+import com.app.chatbot.utils.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +27,11 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public ChatAdapter(List<Message> messageList, Context context) {
         this.messageList = messageList;
         this.context = context;
+    }
+
+    public void updateList(List<Message> messageList) {
+        this.messageList =  messageList;
+        notifyDataSetChanged();
     }
 
     public List<Message> getMessageList() {
@@ -56,11 +63,11 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         Message message = messageList.get(position);
         switch (holder.getItemViewType()) {
             case LEFT:
-                ((LeftChatMsgViewHolder) holder).textViewMsg.setText(message.getMessage());
+                ((LeftChatMsgViewHolder) holder).textViewMsg.setText(!TextUtils.isEmpty(message.getMessage()) ? message.getMessage().trim() : "Empty message");
                 break;
 
             case RIGHT:
-                ((RightChatMsgViewHolder) holder).textViewMsg.setText(message.getMessage());
+                ((RightChatMsgViewHolder) holder).textViewMsg.setText(!TextUtils.isEmpty(message.getMessage()) ? message.getMessage().trim() : "Empty message");
                 break;
 
         }
@@ -75,9 +82,9 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public int getItemViewType(int position) {
         Message message = messageList.get(position);
 
-        if (message.getType().equalsIgnoreCase("BOT")) {
+        if (message.getType().equalsIgnoreCase(Constants.BOT)) {
             return LEFT;
-        } else if (message.getType().equalsIgnoreCase("USER")) {
+        } else if (message.getType().equalsIgnoreCase(Constants.USER)) {
             return RIGHT;
         }
 

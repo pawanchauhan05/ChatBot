@@ -59,38 +59,6 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-    private void storeData() {
-        Message message = new Message();
-        message.setSent(false);
-        message.setMessage("i am user");
-        message.setType(Constants.USER);
-        message.setStoreTime(String.valueOf(Calendar.getInstance().getTimeInMillis()));
-        message.save();
-
-        Message message1 = new Message();
-        message1.setSent(false);
-        message1.setMessage("who are you?");
-        message1.setType(Constants.USER);
-        message1.setStoreTime(String.valueOf(Calendar.getInstance().getTimeInMillis()));
-        message1.save();
-
-
-        Message message2 = new Message();
-        message2.setSent(false);
-        message2.setMessage("are you a bot ?");
-        message2.setType(Constants.USER);
-        message2.setStoreTime(String.valueOf(Calendar.getInstance().getTimeInMillis()));
-        message2.save();
-
-
-        /*Message message3 = new Message();
-        message3.setSent(false);
-        message3.setMessage("are you busy?");
-        message3.setType(Constants.USER);
-        message3.setStoreTime(String.valueOf(Calendar.getInstance().getTimeInMillis()));
-        message3.save();*/
-    }
-
     private void initViews() {
         buttonSend = findViewById(R.id.buttonSend);
         editTextMsg = findViewById(R.id.editTextMsg);
